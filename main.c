@@ -33,16 +33,28 @@ void main(){
         break;
       
       case 3:
-        switch_on();
+        if(is_there_anything && is_pluged_in){
+          is_cooking = switch_on();
+          is_switched_on = is_cooking;
+        } else {
+          print_error("You've forgotten some steps !");
+        }
         break;
       
       case 4:
-        switch_off();
+        if(is_cooking && is_switched_on){
+          is_cooking = switch_off();
+          is_switched_on = is_cooking;
+        } else {
+          print_error("Rice Cooker is already off !");
+        }
         break;
       
       case 5:
         if(!is_there_anything){
           print_error("Something is already empty !");
+        } else if (is_cooking) {
+          print_error("Something is already cooking !");
         } else {
           is_there_anything = empty();
         }
