@@ -9,5 +9,6 @@ bool switch_on();
 bool switch_off();
 
 void print_error();
+void print_result();
 
 #endif

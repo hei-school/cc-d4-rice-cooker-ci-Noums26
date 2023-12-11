@@ -18,9 +18,9 @@ void main(){
     switch(choice){
       case 1:
         if(is_pluged_in){
-          print_error("Rice Cooker already pluged!");
+          print_error("Rice Cooker is already pluged!");
         } else {
-          is_pluged_in = plug_in(is_pluged_in);
+          is_pluged_in = plug_in();
         }
         break;
       
@@ -41,7 +41,13 @@ void main(){
         break;
       
       case 6:
-        unplug();
+        if(!is_pluged_in){
+          print_error("Rice Cooker is already unpluged !");
+        } else if (is_switched_on || is_cooking) {
+          print_error("Rice Cooker is already switched on !");
+        } else {
+          is_pluged_in = unplug();
+        }
         break;
 
       case 7:

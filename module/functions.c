@@ -4,37 +4,43 @@
 #include "functions.h"
 
 bool plug_in(){
-  printf("Rice cooker pluged\n");
+  print_result("Rice cooker pluged");
   return true;
 }
 
 bool unplug(){
-  printf("Rice cooker unpluged\n");
-  return true;
-}
-
-bool put_something(){
-  printf("Something is there\n");
+  print_result("Rice cooker unpluged");
   return false;
 }
 
+bool put_something(){
+  print_result("Something is there");
+  return true;
+}
+
 bool empty(){
-  printf("Rice cooker off\n");
+  print_result("Rice cooker off");
   return false;
 }
 
 bool switch_on(){
-  printf("Rice cooker on\n");
+  print_result("Rice cooker on");
   return true;
 }
 
 bool switch_off(){
-  printf("Rice cooker off\n");
+  print_result("Rice cooker off");
   return false;
 }
 
 void print_error(char msg[]){
   printf("/!\\ ---------------------------------- /!\\\n");
-  fprintf(stderr, "%s \n", msg);
+  fprintf(stderr, "\n\t%s \n\n", msg);
   printf("/!\\ ---------------------------------- /!\\\n");
+}
+
+void print_result(char msg[]){
+  printf(" ---------------------------------- \n");
+  printf("\n\t%s \n\n", msg);
+  printf(" ---------------------------------- \n");
 }
