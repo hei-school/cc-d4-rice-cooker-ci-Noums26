@@ -19,7 +19,7 @@ bool put_something(){
 }
 
 bool empty(){
-  print_result("Rice cooker off");
+  print_result("Rice cooker empty");
   return false;
 }
 

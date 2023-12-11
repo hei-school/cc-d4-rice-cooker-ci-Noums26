@@ -25,7 +25,11 @@ void main(){
         break;
       
       case 2:
-        put_something();
+        if(is_there_anything){
+          print_error("Something is already there !");
+        } else {
+          is_there_anything = put_something();
+        }
         break;
       
       case 3:
@@ -37,7 +41,11 @@ void main(){
         break;
       
       case 5:
-        empty();
+        if(!is_there_anything){
+          print_error("Something is already empty !");
+        } else {
+          is_there_anything = empty();
+        }
         break;
       
       case 6:
@@ -51,6 +59,7 @@ void main(){
         break;
 
       case 7:
+        print_result("Bye !");
         status = false;
         break;
       
