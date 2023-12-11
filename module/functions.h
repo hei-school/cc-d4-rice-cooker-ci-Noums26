@@ -1,0 +1,13 @@
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+
+bool plug_in();
+bool unplug();
+bool put_something();
+bool empty();
+bool switch_on();
+bool switch_off();
+
+void print_error();
+
+#endif
