@@ -2,7 +2,7 @@
 
 This is the implementation in **Go** of rice cooker
 
-For the use case, follow this link: [README.md](temp)
+For the use case, follow this link: [README.md](https://github.com/hei-school/cc-d2-my-rice-cooker-Noums26/blob/main/README.md)
 
 You want to install **Go** before use the app
 

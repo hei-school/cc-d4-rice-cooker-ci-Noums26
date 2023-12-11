@@ -23,6 +23,16 @@ func main() {
 	riceCooker.isPluged = false
 
 	for {
+		fmt.Println("\nRICE COOKER")
+		fmt.Println("------------------------")
+    fmt.Println("\nMenu:\n")
+    fmt.Println("1- Plug In")
+    fmt.Println("2- Put Anything")
+    fmt.Println("3- Switch On")
+    fmt.Println("4- Switch Off")
+    fmt.Println("5- Empty")
+    fmt.Println("6- Unplug")
+    fmt.Println("7- Exit\n")
 		fmt.Println("Make your choice: ")
 		fmt.Scan(&choice)
 
