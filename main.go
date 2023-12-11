@@ -45,6 +45,24 @@ func main() {
 					fmt.Println("\nRice Cooker ready !\n")
 				}
 
+			case "3":
+				res, err := module.SwitchOn(riceCooker.isCooking, riceCooker.isEmpty, riceCooker.isPluged)
+				riceCooker.isCooking = res
+				if err != nil {
+					fmt.Println("Error: ", err)
+				} else {
+					fmt.Println("\nRice Cooker On !\n")
+				}
+
+			case "4":
+				res, err := module.SwitchOff(riceCooker.isCooking)
+				riceCooker.isCooking = res
+				if err != nil {
+					fmt.Println("Error: ", err)
+				} else {
+					fmt.Println("\nRice Cooker Off !\n")
+				}
+
 			case "5":
 				res, err := module.Empty(riceCooker.isEmpty, riceCooker.isCooking)
 				riceCooker.isEmpty = res
