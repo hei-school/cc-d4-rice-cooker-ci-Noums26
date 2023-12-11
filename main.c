@@ -13,6 +13,15 @@ bool is_cooking = false;
 
 void main(){
   while(status){
+    print_result("RICE COOKER");
+    printf("\nMenu:\n\n");
+    printf("1- Plug In\n");
+    printf("2- Put Anything\n");
+    printf("3- Switch On\n");
+    printf("4- Switch Off\n");
+    printf("5- Empty\n");
+    printf("6- Unplug\n");
+    printf("7- Exit\n\n");
     printf("Make your choice: ");
     scanf("%d", &choice);
     switch(choice){
