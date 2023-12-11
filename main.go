@@ -19,7 +19,7 @@ func main() {
 	var riceCooker RiceCooker
 
 	riceCooker.isCooking = false
-	riceCooker.isEmpty = false
+	riceCooker.isEmpty = true
 	riceCooker.isPluged = false
 
 	for {
@@ -27,32 +27,51 @@ func main() {
 		fmt.Scan(&choice)
 
 		switch choice {
-		case "1":
-			res, err := module.PlugIn(riceCooker.isPluged)
-			riceCooker.isPluged = res
-			if err != nil {
-				fmt.Println("Error: ", err)
-			} else {
-				fmt.Println("\nRice Cooker pluged !\n")
-			}
-			
-		case "6":
-			res, err := module.Unplug(riceCooker.isPluged, riceCooker.isCooking)
-			riceCooker.isPluged = res
-			if err != nil {
-				fmt.Println("Error: ", err)
-			} else {
-				fmt.Println("\nRice Cooker unpluged !\n")
-			}
+			case "1":
+				res, err := module.PlugIn(riceCooker.isPluged)
+				riceCooker.isPluged = res
+				if err != nil {
+					fmt.Println("Error: ", err)
+				} else {
+					fmt.Println("\nRice Cooker pluged !\n")
+				}
+				
+			case "2":
+				res, err := module.PutSomething(riceCooker.isEmpty)
+				riceCooker.isEmpty = res
+				if err != nil {
+					fmt.Println("Error: ", err)
+				} else {
+					fmt.Println("\nRice Cooker ready !\n")
+				}
+
+			case "5":
+				res, err := module.Empty(riceCooker.isEmpty, riceCooker.isCooking)
+				riceCooker.isEmpty = res
+				if err != nil {
+					fmt.Println("Error: ", err)
+				} else {
+					fmt.Println("\nRice Cooker is Empty !\n")
+				}
+				
+			case "6":
+				res, err := module.Unplug(riceCooker.isPluged, riceCooker.isCooking)
+				riceCooker.isPluged = res
+				if err != nil {
+					fmt.Println("Error: ", err)
+				} else {
+					fmt.Println("\nRice Cooker unpluged !\n")
+				}
 
 
-		case "7":
-			i = 1
-	
-		default:
-			fmt.Println("")
-			
-		}
+			case "7":
+				fmt.Println("Bye !")
+				i = 1
+		
+			default:
+				fmt.Println("")
+				
+			}
 
 		if i == 1 {
 			break

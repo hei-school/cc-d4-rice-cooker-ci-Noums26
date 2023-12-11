@@ -38,17 +38,17 @@ func SwitchOff(isCooking bool) (bool, error) {
 
 func PutSomething(isEmpty bool) (bool, error) {
 	if !isEmpty {
-		return true, errors.New("Rice cooker is already full")
+		return false, errors.New("Rice cooker is already full")
 	}
-	return true, nil
+	return false, nil
 }
 
 func Empty(isEmpty bool, isCooking bool) (bool, error) {
 	if isEmpty {
-		return false, errors.New("Rice cooker is already empty")
+		return true, errors.New("Rice cooker is already empty")
 	} else if isCooking {
-		return true, errors.New("Rice cooker is already working")
+		return false, errors.New("Rice cooker is already working")
 	}
-	return false, nil
+	return true, nil
 }
 
